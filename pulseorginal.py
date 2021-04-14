@@ -16,12 +16,12 @@ while True:
 
     try:
     
-        # response = requests.get(Restget)
-        # data = response.json()
-        # fps_new = data['fps']
-        # start = data['start']
-        # fps = fps_new
-        # print(fps)
+        response = requests.get(Restget)
+        data = response.json()
+        fps_new = data['fps']
+        start = data['start']
+        fps = fps_new
+        print(fps)
 
         myPWM.ChangeDutyCycle(50)
         myPWM.ChangeFrequency(int(fps))
@@ -48,7 +48,7 @@ while True:
         i=i+1
     except Exception as e:
 
-        myPWM.ChangeDutyCycle(0)
+        myPWM.ChangeDutyCycle()
        
 
 GPIO.cleanup()
