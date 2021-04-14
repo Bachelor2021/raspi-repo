@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 myPWM = GPIO.PWM(18,50)
 myPWM.start(10)
-fps = 20
+fps = 1
 i = 0
 Restget ="http://192.168.10.153:8000/RaspFPS"
 
