@@ -21,6 +21,7 @@ while True:
         fps_new = data['fps']
         start = data['start']
         fps = fps_new
+        print(fps)
 
         myPWM.ChangeDutyCycle(50)
         myPWM.ChangeFrequency(int(fps))
