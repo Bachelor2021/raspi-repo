@@ -12,12 +12,13 @@ Restget ="http://192.168.10.153:8000/RaspFPS"
 
 while True:
 
-    time.sleep(2)
+    time.sleep(1)
 
     try:
     
         response = requests.get(Restget)
         data = response.json()
+        
         fps_new = data['fps']
         start = data['start']
         fps = fps_new
