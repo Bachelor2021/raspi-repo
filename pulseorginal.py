@@ -8,7 +8,7 @@ myPWM = GPIO.PWM(18,50)
 myPWM.start(10)
 fps = 5
 i = 0
-Restget ="http://localhost:8000/RaspFPS"
+Restget ="http://10.0.222.1:8000/RaspFPS"
 
 while True:
 
