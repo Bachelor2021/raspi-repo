@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.*
+
 import RPi.GPIO as GPIO
 import time
 import requests
@@ -13,7 +13,7 @@ Restget ="http://10.0.222.1:8000/RaspFPS"
 
 while True:
 
-    time.sleep(1)
+    time.sleep(2)
 
     try:
     
@@ -23,26 +23,15 @@ while True:
         fps_new = data['fps']
         start = data['start']
         fps = fps_new
-        print(fps)
-
-        myPWM.ChangeDutyCycle(50)
-        myPWM.ChangeFrequency(int(fps))
+        
+        if int(fps)==0:
+            myPWM.ChangeDutyCycle(0)
+        else:
+            myPWM.ChangeDutyCycle(50)
+            myPWM.ChangeFrequency(int(fps))
 
         
-        # if int(fps_new)==0:
-        #     myPWM.ChangeDutyCycle(0)
-        #     if i%100==0:
-        #         print("1")
-               
-        # elif int(fps_new)!= fps:
-        #     fps = int(fps_new)
-        #     myPWM.ChangeDutyCycle(50)
-        #     myPWM.ChangeFrequency(int(fps))
-        # elif fps==int(fps_new) and i%100==0:
-           
-        #     myPWM.ChangeDutyCycle(50)
-        #     myPWM.ChangeFrequency(int(fps))
-        
+       
 
                 
         
